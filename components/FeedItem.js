@@ -29,10 +29,10 @@ export default function FeedItem({ item }) {
   return (
     <Box
       maxW="sm"
+      maxH="sm"
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
-      maxH="sm"
     >
       <Image src={item.imageUrl} />
       <HStack>

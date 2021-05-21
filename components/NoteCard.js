@@ -56,7 +56,7 @@ export default function NoteCard({ individualNote, userId, setNotesData }) {
     <Box
       bg="white"
       color="#212529"
-      padding={3}
+      padding={4}
       maxHeight="md"
       className="individual-note"
       maxW="md"
@@ -79,6 +79,7 @@ export default function NoteCard({ individualNote, userId, setNotesData }) {
         textAlign="center"
         isTruncated
         className="note-headline"
+        mt={2}
       >
         {individualNote.title}
       </Text>
@@ -108,6 +109,7 @@ export default function NoteCard({ individualNote, userId, setNotesData }) {
             size="md"
             onClick={() => onNoteSelect(individualNote)}
             className="note-cta"
+            mb={3}
           >
             Expand
           </Button>
