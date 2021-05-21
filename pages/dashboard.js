@@ -131,7 +131,8 @@ export default function Dashboard() {
       bg="#212529"
       color="white"
       className="dashboard-outer"
-      minHeight={1200}
+      minHeight={1500}
+      padding={4}
     >
       {notesData && !(onboardingCookie in cookies) && (
         <Joyride

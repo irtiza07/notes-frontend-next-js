@@ -9,7 +9,8 @@ import {
   Stack,
   Text,
   VStack,
-  SimpleGrid,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
 
 import FeedItem from "../components/FeedItem";
@@ -29,17 +30,14 @@ export default function NewsFeed() {
       });
   }, []);
   return (
-    <SimpleGrid
-      minChildWidth="440px"
-      spacing="100px"
-      bg="#212529"
-      minWidth="1600px"
-      maxWidth="1500px"
-      marginBottom={60}
-    >
+    <Grid templateColumns="repeat(3, 1fr)" gap={36}>
       {feedEpisodes.map((item) => {
-        return <FeedItem item={item}></FeedItem>;
+        return (
+          <GridItem colSpan={1}>
+            <FeedItem item={item}></FeedItem>
+          </GridItem>
+        );
       })}
-    </SimpleGrid>
+    </Grid>
   );
 }

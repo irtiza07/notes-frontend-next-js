@@ -10,7 +10,7 @@ export default function AllTags({ selectedTag, tags, setSelectedTag }) {
   };
   return (
     <Box>
-      <Text fontSize="2xl" borderBottomWidth={1}>
+      <Text fontSize="2xl" textAlign="center">
         Filter By Tags
       </Text>
       <VStack

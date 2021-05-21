@@ -97,6 +97,7 @@ export default function NoteCard({ individualNote, userId, setNotesData }) {
           ))}
         </HStack>
       </Center>
+
       <Text noOfLines={4}>{individualNote.text}</Text>
       <Center>
         <Box marginTop={6}>

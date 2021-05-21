@@ -17,8 +17,8 @@ import NewsFeed from "../components/NewsFeed";
 
 export default function Home() {
   return (
-    <Box bg="#212529" color="white" minHeight={1600}>
-      <Center paddingTop={280}>
+    <Box bg="#212529" color="white" minHeight={1600} padding={24}>
+      <Center paddingTop={24}>
         <Heading size="4xl">The Future of Note Taking</Heading>
       </Center>
       <Center paddingTop={12}>

@@ -52,7 +52,9 @@ export default function NoteModal({ note, isOpen, onClose }) {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>{note.text}</Text>
+            {note.text.split("\n").map((paragraph) => {
+              return <Text marginTop={4}>{paragraph}</Text>;
+            })}
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Close</Button>
