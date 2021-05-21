@@ -1,65 +1,89 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import {
+  Box,
+  Button,
+  Container,
+  Center,
+  Heading,
+  HStack,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+
+import { PhoneIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
+import Link from "next/link";
+
+import NewsFeed from "../components/NewsFeed";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+    <Box bg="#212529" color="white" minHeight={1600}>
+      <Center paddingTop={280}>
+        <Heading size="4xl">The Future of Note Taking</Heading>
+      </Center>
+      <Center paddingTop={12}>
+        <Text fontSize="2xl" align="center">
+          Create podcasts from your notes. Listen to them whenever you want.
+          Share them with the world.
+        </Text>
+      </Center>
+      <Center paddingTop={12}>
+        <HStack spacing="24px">
+          <Link href="/signup">
+            <Button colorScheme="red" variant="solid" size="lg">
+              Sign Up
+            </Button>
+          </Link>
+          <Link href="/signin">
+            <Button colorScheme="red" variant="outline" size="lg">
+              Sign In
+            </Button>
+          </Link>
+        </HStack>
+      </Center>
+      <Center marginTop="220px">
+        <Stack direction={["column", "row"]} spacing="60px">
+          <VStack spacing={8}>
+            <WarningIcon w={8} h={8} color="red.500" />
+            <Heading size="lg">Create Tags</Heading>
+            <Container>
+              <Text textAlign="center" fontSize="lg">
+                Create unlimited number of tags to organize and group your notes
+                together. You want to get very specifc and precise with your
+                tags.
+              </Text>
+            </Container>
+          </VStack>
+          <VStack spacing={8}>
+            <PhoneIcon w={8} h={8} color="red.500" />
+            <Heading size="lg">Add Notes</Heading>
+            <Container>
+              <Text textAlign="center" fontSize="lg">
+                Add notes to your created tags. All the notes you add to a tag
+                should be related.
+              </Text>
+            </Container>
+          </VStack>
+          <VStack spacing={8}>
+            <AddIcon w={8} h={8} color="red.500" />
+            <Heading size="lg">Generate Podcasts</Heading>
+            <Container>
+              <Text textAlign="center" fontSize="lg">
+                We automatically create podcast episodes for every tag. Whenever
+                you add a new tag, we create a new podcast episode. Whenever you
+                add some new notes to an existing tag, we update the episode for
+                you instantly.
+              </Text>
+            </Container>
+          </VStack>
+        </Stack>
+      </Center>
+      <Center marginTop={32} marginBottom={32}>
+        <Heading>-- Trending Now --</Heading>
+      </Center>
+      <Center>
+        <NewsFeed></NewsFeed>
+      </Center>
+    </Box>
+  );
 }

@@ -1,0 +1,44 @@
+button {
+  box-shadow: none !important;
+}
+
+.tags-input-focused {
+  border: 1px solid;
+}
+
+.tags-container {
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  padding-left: 5px;
+  padding-top: 5px;
+  width: 740px;
+  border-radius: 5px;
+}
+
+.tags-input-container {
+  width: 120px;
+  background: transparent;
+  border: 0;
+  color: #777;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 6px;
+  margin-top: 1px;
+  outline: none;
+  padding: 5px;
+}
+
+.selected-tag {
+  background-color: #fed7d7;
+  border-radius: 4px;
+  color: #822727;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding: 5px;
+}
