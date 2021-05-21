@@ -32,11 +32,7 @@ export default function NewsFeed() {
   return (
     <Grid templateColumns="repeat(3, 1fr)" gap={36}>
       {feedEpisodes.map((item) => {
-        return (
-          <GridItem colSpan={1}>
-            <FeedItem item={item}></FeedItem>
-          </GridItem>
-        );
+        return <FeedItem item={item}></FeedItem>;
       })}
     </Grid>
   );

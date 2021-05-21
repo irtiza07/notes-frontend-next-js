@@ -56,11 +56,13 @@ export default function NoteCard({ individualNote, userId, setNotesData }) {
     <Box
       bg="white"
       color="#212529"
-      borderRadius={8}
-      padding={6}
-      maxHeight={540}
-      maxWidth={700}
+      padding={3}
+      maxHeight="md"
       className="individual-note"
+      maxW="md"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
     >
       <HStack>
         <Spacer />
@@ -68,7 +70,6 @@ export default function NoteCard({ individualNote, userId, setNotesData }) {
           color="#E53E3E"
           boxSize="24px"
           cursor="pointer"
-          zIndex="999"
           onClick={() => removeNote(individualNote)}
         ></DeleteIcon>
       </HStack>

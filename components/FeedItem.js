@@ -27,7 +27,13 @@ export default function FeedItem({ item }) {
   }, []);
 
   return (
-    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Box
+      maxW="sm"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      maxH="sm"
+    >
       <Image src={item.imageUrl} />
       <HStack>
         <Box p="6">

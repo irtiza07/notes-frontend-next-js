@@ -57,13 +57,11 @@ export default function NotesDashboard({ notesData, setNotesData, userId }) {
                       return;
                     } else {
                       return (
-                        <GridItem>
-                          <NoteCard
-                            individualNote={note}
-                            userId={userId}
-                            setNotesData={setNotesData}
-                          ></NoteCard>
-                        </GridItem>
+                        <NoteCard
+                          individualNote={note}
+                          userId={userId}
+                          setNotesData={setNotesData}
+                        ></NoteCard>
                       );
                     }
                   })}
