@@ -87,13 +87,12 @@ export default function NewNoteModal({
                   onChange={(tags) => setTags(tags)}
                   onlyUnique
                   focusedClassName="tags-input-focused"
-                  className="tags-container"
-                  width="740px"
+                  className="react-tagsinput"
                   inputProps={{
                     placeholder: "Add multiple tags",
-                    className: "tags-input-container",
+                    className: "react-tagsinput-input",
                   }}
-                  tagProps={{ className: "selected-tag" }}
+                  tagProps={{ className: "react-tagsinput-tag" }}
                 />
                 <Textarea
                   focusBorderColor="none"
