@@ -10,8 +10,6 @@ import {
   GridItem,
 } from "@chakra-ui/react";
 
-import "react-tagsinput/react-tagsinput.css"; // If using WebPack and style-loader.
-
 import { useState } from "react";
 
 import AllTags from "./AllTags";

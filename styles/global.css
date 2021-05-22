@@ -14,7 +14,7 @@ button {
 }
 
 .react-tagsinput--focused {
-  border-color: #a5d24a;
+  border-color: #e53e3e;
 }
 
 .react-tagsinput-tag {
@@ -28,7 +28,8 @@ button {
   font-weight: 400;
   margin-bottom: 5px;
   margin-right: 5px;
-  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .react-tagsinput-remove {
@@ -51,5 +52,5 @@ button {
   margin-top: 6px;
   outline: none;
   padding: 5px;
-  width: 140px;
+  width: 280px;
 }
