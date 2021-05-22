@@ -27,6 +27,7 @@ export default function NewNoteModal({
   const [title, setTitle] = useState("");
   const [noteText, setNoteText] = useState("");
   const noteCreation = useToast();
+  const badInputTag = useToast();
 
   const onNoteCreate = () => {
     fetch(`https://aziiqfussc.execute-api.us-east-1.amazonaws.com/dev/notes`, {
@@ -93,6 +94,16 @@ export default function NewNoteModal({
                     className: "react-tagsinput-input",
                   }}
                   tagProps={{ className: "react-tagsinput-tag" }}
+                  validationRegex={/^\S*$/}
+                  onValidationReject={() => {
+                    return badInputTag({
+                      title: "Invalid tag",
+                      description: "A tag cannot have empty space",
+                      status: "error",
+                      duration: 5000,
+                      isClosable: true,
+                    });
+                  }}
                 />
                 <Textarea
                   focusBorderColor="none"
