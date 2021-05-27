@@ -19,6 +19,7 @@ import fire from "../utils/fire";
 
 import NotesDashboard from "../components/NotesDashboard";
 import PodcastDashboard from "../components/PodcastDashboard";
+import TopNav from "../components/TopNav";
 
 const onboardingCookie = "seenOnboarding";
 

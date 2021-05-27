@@ -9,6 +9,9 @@ import {
 } from "@chakra-ui/react";
 
 import { useState, useContext } from "react";
+import { useRouter } from "next/router";
+
+import TopNav from "../components/TopNav";
 
 import fire from "../utils/fire";
 import { UserContext } from "../utils/state";
@@ -17,6 +20,7 @@ export default function SignUp() {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const { userId, changeUserId } = useContext(UserContext);
+  const router = useRouter();
   console.log("Sign up page");
   console.log(userId);
 
@@ -24,6 +28,7 @@ export default function SignUp() {
     if (user) {
       console.log("Auth changed. New state has a user");
       changeUserId(user.uid);
+      router.push("/dashboard");
     } else {
       console.log("Auth changed. New state does not have a user");
       changeUserId(null);
@@ -55,7 +60,14 @@ export default function SignUp() {
       });
   };
   return (
-    <Box bg="#212529" minHeight={1600} color="white">
+    <Box
+      bg="#212529"
+      minHeight={1600}
+      color="white"
+      paddingLeft={24}
+      paddingRight={24}
+    >
+      <TopNav></TopNav>
       <Center paddingTop={100}>
         <Heading>Welcome to Nuggets</Heading>
       </Center>

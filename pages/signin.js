@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 
 import fire from "../utils/fire";
 import { UserContext } from "../utils/state";
+import TopNav from "../components/TopNav";
 
 export default function SignIn() {
   const [email, setEmail] = useState(null);
@@ -28,6 +29,7 @@ export default function SignIn() {
       router.push("/dashboard");
     } else {
       console.log("Auth changed. New state does not have a user");
+
       changeUserId(null);
     }
   });
@@ -51,7 +53,14 @@ export default function SignIn() {
       });
   };
   return (
-    <Box bg="#212529" minHeight={1600} color="white">
+    <Box
+      bg="#212529"
+      minHeight={1600}
+      color="white"
+      paddingLeft={24}
+      paddingRight={24}
+    >
+      <TopNav></TopNav>
       <Center paddingTop={100}>
         <Heading>Sign In</Heading>
       </Center>

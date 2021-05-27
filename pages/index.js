@@ -14,17 +14,28 @@ import { PhoneIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 
 import NewsFeed from "../components/NewsFeed";
+import TopNav from "../components/TopNav";
 
 export default function Home() {
   return (
-    <Box bg="#212529" color="white" minHeight={1600} padding={24}>
+    <Box
+      bg="#212529"
+      color="white"
+      minHeight={1600}
+      paddingLeft={24}
+      paddingRight={24}
+      paddingBottom={24}
+    >
+      <Box>
+        <TopNav showCta={true}></TopNav>
+      </Box>
       <Center paddingTop={24}>
         <Heading size="4xl">The Future of Note Taking</Heading>
       </Center>
       <Center paddingTop={12}>
         <Text fontSize="2xl" align="center">
-          Create podcasts from your notes. Listen to them whenever you want.
-          Share them with the world.
+          Create podcasts from your notes. Listen to them in your favorite
+          podcast player. Share them with the world.
         </Text>
       </Center>
       <Center paddingTop={12}>
@@ -45,34 +56,30 @@ export default function Home() {
         <Stack direction={["column", "row"]} spacing="60px">
           <VStack spacing={8}>
             <WarningIcon w={8} h={8} color="red.500" />
-            <Heading size="lg">Create Tags</Heading>
+            <Heading size="lg">Write</Heading>
             <Container>
-              <Text textAlign="center" fontSize="lg">
-                Create unlimited number of tags to organize and group your notes
-                together. You want to get very specifc and precise with your
-                tags.
+              <Text textAlign="center" fontSize={22}>
+                Write notes and group related ones together using tags
               </Text>
             </Container>
           </VStack>
           <VStack spacing={8}>
             <PhoneIcon w={8} h={8} color="red.500" />
-            <Heading size="lg">Add Notes</Heading>
+            <Heading size="lg">Listen</Heading>
             <Container>
-              <Text textAlign="center" fontSize="lg">
-                Add notes to your created tags. All the notes you add to a tag
-                should be related.
+              <Text textAlign="center" fontSize={22}>
+                We automatically turn your notes into audio using our deep
+                learning model and add them to your favorite podcast player.
+                Listen to them whenever you want, wherever you are
               </Text>
             </Container>
           </VStack>
           <VStack spacing={8}>
             <AddIcon w={8} h={8} color="red.500" />
-            <Heading size="lg">Generate Podcasts</Heading>
+            <Heading size="lg">Share</Heading>
             <Container>
-              <Text textAlign="center" fontSize="lg">
-                We automatically create podcast episodes for every tag. Whenever
-                you add a new tag, we create a new podcast episode. Whenever you
-                add some new notes to an existing tag, we update the episode for
-                you instantly.
+              <Text textAlign="center" fontSize={22}>
+                Provide value to others by sharing your knowledge with the world
               </Text>
             </Container>
           </VStack>
