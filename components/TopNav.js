@@ -1,16 +1,5 @@
 import React from "react";
-import { BiNotepad } from "react-icons/bi";
-import {
-  Button,
-  Heading,
-  HStack,
-  Text,
-  Flex,
-  Icon,
-  IconButton,
-  Spacer,
-  Image,
-} from "@chakra-ui/react";
+import { Button, HStack, Text, Flex, Spacer, Image } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
 export default function TopNav({ showCta }) {

@@ -6,6 +6,7 @@ import {
   Spacer,
   Heading,
   HStack,
+  Image,
 } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { QuestionIcon } from "@chakra-ui/icons";
@@ -101,6 +102,13 @@ export default function Dashboard() {
           className="bringOnboarding"
         ></QuestionIcon>
         <Spacer></Spacer>
+        <Image
+          src="https://irtizahighlights.s3.us-east-2.amazonaws.com/aviva_logo_v1.png"
+          alt="Aviva"
+          width={28}
+          height={28}
+        />
+        <Spacer></Spacer>
         <Button
           colorScheme="red"
           variant="outline"
@@ -111,7 +119,7 @@ export default function Dashboard() {
           Sign Out
         </Button>
       </Flex>
-      <Tabs isLazy variant="unstyled">
+      <Tabs isLazy variant="unstyled" mt={16}>
         <Center>
           <TabList>
             <HStack spacing={16} className="mainTabs">
