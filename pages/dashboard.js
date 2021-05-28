@@ -16,6 +16,7 @@ import { UserContext } from "../utils/state";
 import { useRouter } from "next/router";
 import UserOnboarding from "react-user-onboarding";
 import "react-user-onboarding/dist/index.css";
+import { CircleLoader } from "react-spinners";
 
 import fire from "../utils/fire";
 
@@ -71,7 +72,13 @@ export default function Dashboard() {
 
   if (!notesData) {
     console.log("Could not load any data..");
-    return null;
+    return (
+      <Box bg="#212529" minHeight={1500}>
+        <Center paddingTop={300}>
+          <CircleLoader color="#E53E3E" size={500}></CircleLoader>
+        </Center>
+      </Box>
+    );
   }
 
   return (

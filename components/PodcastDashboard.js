@@ -7,6 +7,7 @@ import { useCookies } from "react-cookie";
 
 import "intro.js/introjs.css";
 import { Steps, Hints } from "intro.js-react";
+import { CircleLoader } from "react-spinners";
 
 const steps = [
   {
@@ -80,6 +81,11 @@ export default function PodcastDashboard({ userId, podcastUrl }) {
       <GridItem colSpan={4}>
         <Box paddingTop={12}>
           <AddPodcast podcastUrl={podcastUrl}></AddPodcast>
+          {!episodes && (
+            <Center marginTop={24}>
+              <CircleLoader color="#E53E3E" size={500}></CircleLoader>
+            </Center>
+          )}
           {episodes && episodes.length !== 0 && (
             <Grid templateColumns="repeat(3, 1fr)" gap={10}>
               {episodes &&
