@@ -32,6 +32,7 @@ export default function NewNoteCTA({ existingTags, setNotesData }) {
         variant="solid"
         size="lg"
         onClick={() => onNewOpen()}
+        className="newNoteBtn"
       >
         New Note
       </Button>

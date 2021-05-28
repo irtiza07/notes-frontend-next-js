@@ -14,21 +14,26 @@ import { useCookies } from "react-cookie";
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../utils/state";
 import { useRouter } from "next/router";
+import UserOnboarding from "react-user-onboarding";
+import "react-user-onboarding/dist/index.css";
 
 import fire from "../utils/fire";
 
 import NotesDashboard from "../components/NotesDashboard";
 import PodcastDashboard from "../components/PodcastDashboard";
-import TopNav from "../components/TopNav";
 
-const onboardingCookie = "seenOnboarding";
+const notesOnboardingCookie = "seenNotesOnboarding";
+const podcastsOnboardingCookie = "seenPodcastsOnboarding";
 
 export default function Dashboard() {
   const { userId } = useContext(UserContext);
-  const [cookies, setCookie, removeCookie] = useCookies([onboardingCookie]);
   const router = useRouter();
 
   const [notesData, setNotesData] = useState(null);
+  const [cookies, setCookie, removeCookie] = useCookies([
+    notesOnboardingCookie,
+    podcastsOnboardingCookie,
+  ]);
 
   useEffect(() => {
     if (userId) {
@@ -82,7 +87,12 @@ export default function Dashboard() {
           color="#E53E3E"
           boxSize="40px"
           cursor="pointer"
-          onClick={() => removeCookie(onboardingCookie)}
+          onClick={() => {
+            console.log("Help me please...");
+            removeCookie(notesOnboardingCookie);
+            removeCookie(podcastsOnboardingCookie);
+          }}
+          className="bringOnboarding"
         ></QuestionIcon>
         <Spacer></Spacer>
         <Button
@@ -98,12 +108,12 @@ export default function Dashboard() {
       <Tabs isLazy variant="unstyled">
         <Center>
           <TabList>
-            <HStack spacing={16}>
+            <HStack spacing={16} className="mainTabs">
               <Tab _selected={{ color: "white", bg: "red.500" }}>
                 <Heading>Notes</Heading>
               </Tab>
               <Tab _selected={{ color: "white", bg: "red.500" }}>
-                <Heading>Podcast</Heading>
+                <Heading className="podcastsTab">Podcast</Heading>
               </Tab>
             </HStack>
           </TabList>
@@ -118,7 +128,10 @@ export default function Dashboard() {
             ></NotesDashboard>
           </TabPanel>
           <TabPanel>
-            <PodcastDashboard userId={userId}></PodcastDashboard>
+            <PodcastDashboard
+              userId={userId}
+              podcastUrl={notesData["podcastUrl"]}
+            ></PodcastDashboard>
           </TabPanel>
         </TabPanels>
       </Tabs>

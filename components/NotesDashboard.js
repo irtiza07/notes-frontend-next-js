@@ -8,18 +8,67 @@ import {
   Flex,
   Grid,
   GridItem,
+  useEditableState,
 } from "@chakra-ui/react";
 
 import { useState } from "react";
+import { useCookies } from "react-cookie";
 
 import AllTags from "./AllTags";
 import NewNoteCTA from "./NewNoteCTA";
 import NoteCard from "./NoteCard";
 
+import "intro.js/introjs.css";
+import { Steps, Hints } from "intro.js-react";
+
+const steps = [
+  {
+    element: ".mainTabs",
+    intro:
+      "Your dashboard is divided into two panels. Notes contain all your individual notes which you can filter by tags. Podcast contains all your podcast episodes, one episoder per tag. Each episode consists of all notes belonging to a particular tag.",
+    position: "bottom",
+  },
+  {
+    element: ".newNoteBtn",
+    intro:
+      "Create new notes by clicking this button. You can use multiple tags to group related notes together. All your notes are private and only you can see them.",
+  },
+  {
+    element: ".noteTags",
+    intro: "You can filter your notes by tags.",
+  },
+  {
+    element: ".podcastsTab",
+    intro: "Go to the Podcast tab and see how it works.",
+  },
+  {
+    element: ".bringOnboarding",
+    intro: "Whenever you are stuck, click here for help.",
+  },
+];
+
+const notesOnboardingCookie = "seenNotesOnboarding";
+
 export default function NotesDashboard({ notesData, setNotesData, userId }) {
+  const [cookies, setCookie, removeCookie] = useCookies([
+    notesOnboardingCookie,
+  ]);
+
   const [selectedTag, setSelectedTag] = useState(null);
   return (
     <Grid templateColumns="repeat(5, 1fr)">
+      <Steps
+        enabled={!(notesOnboardingCookie in cookies)}
+        steps={steps}
+        initialStep={0}
+        onExit={() => console.log("Exit early")}
+        onComplete={() => setCookie(notesOnboardingCookie, 1)}
+        options={{
+          doneLabel: "Finish",
+          showStepNumbers: true,
+          overlayOpacity: 0.95,
+        }}
+      />
       <GridItem colSpan={1}>
         <AllTags
           tags={notesData.tags}

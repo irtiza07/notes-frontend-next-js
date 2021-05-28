@@ -9,7 +9,7 @@ export default function AllTags({ selectedTag, tags, setSelectedTag }) {
       : setSelectedTag(newTag);
   };
   return (
-    <Box>
+    <Box className="noteTags">
       <Text fontSize="2xl" textAlign="center">
         Filter By Tags
       </Text>
