@@ -9,6 +9,7 @@ import {
   Icon,
   IconButton,
   Spacer,
+  Image,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
@@ -18,13 +19,13 @@ export default function TopNav({ showCta }) {
   return (
     <Flex padding={8} mb={12}>
       <HStack spacing={8} cursor="pointer" onClick={() => router.push("/")}>
-        <IconButton
-          variant="outline"
-          colorScheme="red"
-          aria-label="Send email"
-          icon={<Icon as={BiNotepad} />}
+        <Image
+          src="https://irtizahighlights.s3.us-east-2.amazonaws.com/aviva_logo_v1.png"
+          alt="Aviva"
+          width={28}
+          height={28}
         />
-        <Heading>Aviva</Heading>
+        {/* <Heading>Aviva</Heading> */}
       </HStack>
       <Spacer></Spacer>
       <HStack spacing={12}>
