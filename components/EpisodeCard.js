@@ -26,7 +26,7 @@ export default function EpisodeCard({ userId, episode }) {
 
   useEffect(() => {
     setAudioFile(new Audio(episode.episodeUri));
-  }, []);
+  }, [episode]);
 
   console.log(episode);
 

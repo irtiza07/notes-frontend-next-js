@@ -25,7 +25,7 @@ const steps = [
   {
     element: ".mainTabs",
     intro:
-      "Your dashboard is divided into two panels. Notes contain all your individual notes which you can filter by tags. Podcast contains all your podcast episodes, one episoder per tag. Each episode consists of all notes belonging to a particular tag.",
+      "Your dashboard is divided into two panels. Notes contain all your individual notes which you can filter by tags. Podcast contains all your podcast episodes, one episode per tag. Each episode consists of all notes belonging to a particular tag.",
     position: "bottom",
   },
   {
