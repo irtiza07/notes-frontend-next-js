@@ -11,7 +11,7 @@ import {
   Button,
   Image,
 } from "@chakra-ui/react";
-import { DownloadIcon, AddIcon } from "@chakra-ui/icons";
+import { DownloadIcon } from "@chakra-ui/icons";
 import { FaPlay, FaPause, FaShare } from "react-icons/fa";
 import { GrPowerReset } from "react-icons/gr";
 import ShareModal from "./ShareModal";

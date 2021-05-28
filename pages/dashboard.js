@@ -14,7 +14,6 @@ import { useCookies } from "react-cookie";
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../utils/state";
 import { useRouter } from "next/router";
-import UserOnboarding from "react-user-onboarding";
 import "react-user-onboarding/dist/index.css";
 import { CircleLoader } from "react-spinners";
 

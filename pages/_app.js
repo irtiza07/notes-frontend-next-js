@@ -1,4 +1,4 @@
-import { UserContext, UserContextProvider } from "../utils/state";
+import { UserContextProvider } from "../utils/state";
 import { ChakraProvider } from "@chakra-ui/react";
 import "../styles/global.css";
 

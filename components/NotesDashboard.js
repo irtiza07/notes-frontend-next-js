@@ -8,7 +8,6 @@ import {
   Flex,
   Grid,
   GridItem,
-  useEditableState,
 } from "@chakra-ui/react";
 
 import { useState } from "react";
@@ -19,7 +18,7 @@ import NewNoteCTA from "./NewNoteCTA";
 import NoteCard from "./NoteCard";
 
 import "intro.js/introjs.css";
-import { Steps, Hints } from "intro.js-react";
+import { Steps } from "intro.js-react";
 
 const steps = [
   {

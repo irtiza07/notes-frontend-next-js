@@ -2,17 +2,9 @@ import React, { useState, useEffect } from "react";
 import {
   Badge,
   Box,
-  Button,
-  Container,
-  Center,
-  Heading,
   HStack,
   Icon,
   IconButton,
-  Stack,
-  Text,
-  VStack,
-  SimpleGrid,
   Spacer,
   Image,
 } from "@chakra-ui/react";

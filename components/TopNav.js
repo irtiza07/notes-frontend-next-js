@@ -1,15 +1,10 @@
 import React from "react";
 import { BiNotepad } from "react-icons/bi";
 import {
-  Box,
   Button,
-  Container,
-  Center,
   Heading,
   HStack,
-  Stack,
   Text,
-  VStack,
   Flex,
   Icon,
   IconButton,

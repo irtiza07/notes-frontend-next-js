@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Box, Center, Text, Grid, GridItem, Spinner } from "@chakra-ui/react";
+import { Box, Center, Text, Grid, GridItem } from "@chakra-ui/react";
 import EpisodeCard from "./EpisodeCard";
 import AllTags from "./AllTags";
 import AddPodcast from "./AddPodcast";
 import { useCookies } from "react-cookie";
 
 import "intro.js/introjs.css";
-import { Steps, Hints } from "intro.js-react";
+import { Steps } from "intro.js-react";
 import { CircleLoader } from "react-spinners";
 
 const steps = [

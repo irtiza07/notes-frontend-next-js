@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Button,
-  Container,
-  Center,
-  Heading,
-  HStack,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
 import TopNav from "../components/TopNav";
 import {
   FaFacebook,

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Tag, HStack, VStack, Text } from "@chakra-ui/react";
+import { Box, Tag, VStack, Text } from "@chakra-ui/react";
 
 export default function AllTags({ selectedTag, tags, setSelectedTag }) {
   const onTagSelect = (e) => {

@@ -1,4 +1,4 @@
-import { Button, Center, Heading, Input, Textarea } from "@chakra-ui/react";
+import { Button, Center, Heading, Input } from "@chakra-ui/react";
 
 import {
   Modal,
