@@ -69,7 +69,7 @@ export default function SignUp() {
     >
       <TopNav></TopNav>
       <Center paddingTop={100}>
-        <Heading>Welcome to Aviva</Heading>
+        <Heading>Welcome to NoteBytes</Heading>
       </Center>
       <Center paddingTop={8}>
         <Text fontSize="2xl" align="center">

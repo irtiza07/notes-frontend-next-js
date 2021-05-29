@@ -66,7 +66,7 @@ export default function SignIn() {
       </Center>
       <Center paddingTop={8}>
         <Text fontSize="2xl" align="center">
-          Sign in to Aviva to get access to all your awesome notes and
+          Sign in to NoteBytes to get access to all your awesome notes and
           podcasts!
         </Text>
       </Center>

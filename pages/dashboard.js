@@ -107,6 +107,8 @@ export default function Dashboard() {
           alt="Aviva"
           width={28}
           height={28}
+          cursor="pointer"
+          onClick={() => router.push("/")}
         />
         <Spacer></Spacer>
         <Button

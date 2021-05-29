@@ -28,8 +28,20 @@ export default function NewNoteModal({
   const [noteText, setNoteText] = useState("");
   const noteCreation = useToast();
   const badInputTag = useToast();
+  const badNote = useToast();
 
   const onNoteCreate = () => {
+    if (!title || !noteText || !tags || tags.length === 0) {
+      badNote({
+        title: "Invalid Note",
+        description: "You must have a title, at least one tag and some notes.",
+        status: "error",
+        duration: 10000,
+        isClosable: true,
+      });
+      return;
+    }
+
     fetch(`https://aziiqfussc.execute-api.us-east-1.amazonaws.com/dev/notes`, {
       method: "POST",
       headers: {
@@ -90,7 +102,8 @@ export default function NewNoteModal({
                   focusedClassName="tags-input-focused"
                   className="react-tagsinput"
                   inputProps={{
-                    placeholder: "Add multiple tags",
+                    placeholder:
+                      "Add multiple tags (Hit enter after every tag)",
                     className: "react-tagsinput-input",
                   }}
                   tagProps={{ className: "react-tagsinput-tag" }}
