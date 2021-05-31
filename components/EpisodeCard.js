@@ -32,7 +32,7 @@ export default function EpisodeCard({ userId, episode }) {
 
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Image src={episode.imageUrl ? episode.imageUrl : defaultImageUrl} />
+      <Image src={episode.imageUrl ? episode.imageUrl : defaultImageUrl} height={200} width={400} objectFit="cover" />
       <HStack>
         <Box p="6">
           <Box d="flex" alignItems="baseline">

@@ -26,7 +26,9 @@ export default function FeedItem({ item }) {
       borderRadius="lg"
       overflow="hidden"
     >
-      <Image src={item.imageUrl} />
+    <Box>
+      <Image src={item.imageUrl} height={200} width={400} objectFit="cover"  />
+    </Box>
       <HStack>
         <Box p="6">
           <Box d="flex" alignItems="baseline">

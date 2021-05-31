@@ -19,8 +19,20 @@ export default function ShareModal({ isOpen, onClose, userId, episodeUri }) {
   const [category, setCategory] = useState("");
 
   const shareSuccessful = useToast();
+  const shareError = useToast();
 
   const onShare = () => {
+    if (!name || !category) {
+      shareError({
+        title: "Could not Share",
+        description: "You must have a name and category to share.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+      return;
+    }
+
     fetch(`https://aziiqfussc.execute-api.us-east-1.amazonaws.com/dev/share`, {
       method: "POST",
       headers: {
