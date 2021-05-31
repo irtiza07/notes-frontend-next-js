@@ -7,6 +7,7 @@ import {
   IconButton,
   Spacer,
   Image,
+  Container
 } from "@chakra-ui/react";
 import { FaPlay, FaPause } from "react-icons/fa";
 
@@ -52,6 +53,7 @@ export default function FeedItem({ item }) {
             as="h4"
             lineHeight="tight"
             isTruncated
+            maxW={260}
           >
             {item.name}
           </Box>
